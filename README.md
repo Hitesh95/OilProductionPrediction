@@ -1,6 +1,6 @@
 # OilProductionPrediction
 1 Executive Summary  and 2 Introduction
-        - This project predicts the oil production till date. The data is from 1992 till present and initially we have 16 parameters which are finally reduced to 4 parameters and we can predict the oil production. The below given is the index of the steps followed to build this predictive model.
+        - This project predicts the oil production till date. The data is from 1992 till present and initially we have 12 parameters which are finally reduced to 4 parameters and we can predict the oil production. The below given is the index of the steps followed to build this predictive model.
 
 3 Loading and Exploring Data 
 3.1 Loading libraries required and reading the data into R
@@ -11,24 +11,16 @@
 4.2 The most important numeric predictors 
 4.2.1 Correlations with response variable that is oil production rate
 
-5 Missing data, label encoding, and factorizing variables 
-5.1 Completeness of the data
-5.2 Imputing missing data 
-5.3 Label encoding/factorizing the remaining character variables 
-5.4 Changing some numeric variables into factors
+5 Visualization of important variables 
+5.1 Correlations again
+5.2 Finding variable importance with a quick Random Forest
 
-6 Visualization of important variables 
-6.1 Correlations again
-6.2 Finding variable importance with a quick Random Forest
+6 Preparing data for modeling 
+6.1 Dropping highly correlated variables
+6.2 Removing outliers
+6.3 PreProcessing predictor variables 
+6.3.1 Skewness and normalizing of the numeric predictors
+6.4 Dealing with skewness of response variable
+6.5 Composing train and test sets
 
-7 Preparing data for modeling 
-7.1 Dropping highly correlated variables
-7.2 Removing outliers
-7.3 PreProcessing predictor variables 
-7.3.1 Skewness and normalizing of the numeric predictors
-7.3.2 One hot encoding the categorical variables
-7.3.3 Removing levels with few or no observations in train or test
-7.4 Dealing with skewness of response variable
-7.5 Composing train and test sets
-
-8.3 Averaging predictions
+7.3 Averaging predictions
