@@ -1,8 +1,6 @@
 # OilProductionPrediction
-This project predicts the oil production till date. The data is from 1992 till present and initially we have 16 parameters which are finally reduced to 4 parameters and we can predict the oil production. The below given is the index of the steps followed to build this predictive model.
-
-1 Executive Summary
-2 Introduction
+1 Executive Summary  and 2 Introduction
+        - This project predicts the oil production till date. The data is from 1992 till present and initially we have 16 parameters which are finally reduced to 4 parameters and we can predict the oil production. The below given is the index of the steps followed to build this predictive model.
 
 3 Loading and Exploring Data 
 3.1 Loading libraries required and reading the data into R
@@ -33,7 +31,4 @@ This project predicts the oil production till date. The data is from 1992 till p
 7.4 Dealing with skewness of response variable
 7.5 Composing train and test sets
 
-8.3 Averaging predictions
-8.3 Averaging predictions
-8.3 Averaging predictions
 8.3 Averaging predictions
