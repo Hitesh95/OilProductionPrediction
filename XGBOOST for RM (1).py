@@ -3,7 +3,7 @@
 
 # In[13]:
 
-
+# IMPORTING ALL THE MODULES REQUIRED
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -23,7 +23,7 @@ from xgboost import plot_importance
 from matplotlib import pyplot
 
 
-
+#READING THE DATA SET AND DIVIND THE DATA SET INTO TRAINING AND TEST SET
 dataset = pd.read_csv("C:/Users/h.rajesh.hinduja/Desktop/new_file.csv")
 dataset
 x = np.array(dataset)
@@ -33,18 +33,23 @@ Y = x[:,17]
 Y
 seed = 8
 test_size = 0.15
+
+#CREATING A CROSS VALIDTION SET TO PERFORM FINE TUNING OF PARAMTERS IN THE XGBOOST REGRESSOR MODEL
 X_train, X_test, y_train, y_test = cross_validation.train_test_split(X, Y ,test_size=test_size, random_state=seed)
 y_test
 
+#RUNNING XGBOOST MODEL
 xgb = xgboost.XGBRegressor(n_estimators=135, learning_rate=0.04, gamma=0, subsample=0.9,
                            colsample_bytree=0.5, max_depth=10,max_delta_step=0,min_child_weight=1,colsample_bylevel=0.8,reg_lambda=1, reg_alpha=0, booster='gbtree', base_score=0.5)
 traindf, testdf = train_test_split(X_train, test_size = test_size)
 xgb.fit(X_train,y_train)
 
 
-
+#PREDICTING THE VALUES FROM THE MODEL TRAINED AND EXPORTING IT TO FILE
 predictions = xgb.predict(X_test)
 predictions
+
+#CALCULATING ROOT MEAN SQUARE ERROR FOR EVALUATING THE PERFORMANCE OF THE MODEL
 rms = sqrt(mean_squared_error(y_test, predictions))
 print(rms)
 
@@ -59,6 +64,7 @@ predictions
 print(explained_variance_score(y_test,predictions))
 predictions
 
+#PLOTTING OF GRAPHS TO SEE VARIABLE IMPORTANCE OF THE INDEPENDENT VARIABLES  IN THE MODEL
 print(xgb.feature_importances_)
 
 pyplot.bar(range(len(xgb.feature_importances_)), xgb.feature_importances_)
